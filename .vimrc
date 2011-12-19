@@ -54,9 +54,8 @@ cmap w!! w !sudo tee % >/dev/null
 map <C-J> <C-W>j<C-W>_
 map <C-K> <C-W>k<C-W>_
 set wmh=0 " Don't show line number in inactive splits
-//set clipboard=unnamed
+"//set clipboard=unnamed
 
-NERDTree
 " set autowrite
 " Buffers - explore/next/previous: Alt-F12, F12, Shift-F12.
 nnoremap <silent> <M-F12> :BufExplorer<CR>
@@ -68,3 +67,8 @@ nnoremap <f3> :BufExplorer<CR>
 " vimrc
 set nocp
 filetype plugin on
+" xml pretty format
+" " one or more lines:
+vmap ,px !xmllint --format -<CR>
+" pretty-print current line
+nmap ,px !!xmllint --format -<CR>
